@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8" />
+    <title>Solcaféet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f8f5ef;
+            line-height: 1.5;
+        }
+
+        header {
+            background-color: #f4d27a;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            min-height: 70vh;
+            background-image: url("https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg");
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 650px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero button {
+            padding: 10px 25px;
+            border: none;
+            background-color: #f4d27a;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .hero button:hover {
+            background-color: #f1c65e;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .section p {
+            margin-bottom: 10px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .menu-item {
+            background-color: white;
+            border-radius: 6px;
+            padding: 15px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .menu-item span:first-child {
+            font-weight: bold;
+        }
+
+        .menu-item span:last-child {
+            color: #666;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .hours-table p {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        footer {
+            background-color: #f4d27a;
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+                margin-left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <div class="logo">Solcaféet</div>
+            <nav>
+                <a href="#om-oss">Om oss</a>
+                <a href="#meny">Meny</a>
+                <a href="#oppettider">Öppettider</a>
+                <a href="#kontakt">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Välkommen till Solcaféet</h1>
+            <p>Ett litet, varmt café där vi brygger kaffe med omtanke och bakar med kärlek.</p>
+            <button onclick="document.getElementById('meny').scrollIntoView({behavior:'smooth'})">
+                Se vår meny
+            </button>
+        </div>
+    </section>
+
+    <section class="section" id="om-oss">
+        <h2>Om Solcaféet</h2>
+        <div class="about-grid">
+            <div>
+                <p>
+                    Solcaféet är en samlingsplats för grannar, vänner och förbipasserande.
+                    Här hittar du nybryggt kaffe, nybakade bullar och enkel mat lagad från grunden.
+                </p>
+                <p>
+                    Vi försöker använda lokala råvaror när vi kan och vill att varje besök
+                    ska kännas som att komma hem.
+                </p>
+            </div>
+            <div class="card">
+                <h3>Vad vi erbjuder</h3>
+                <p>• Kaffe och te</p>
+                <p>• Fikabröd och bakverk</p>
+                <p>• Lätta luncher</p>
+                <p>• Veganska och glutenfria alternativ</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="meny">
+        <h2>Dagens meny</h2>
+        <p style="text-align:center;">Ett urval av vad vi serverar just nu.</p>
+
+        <h3>Kaffe & varma drycker</h3>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <span>Bryggkaffe</span>
+                <span>35 kr</span>
+            </div>
+            <div class="menu-item">
+                <span>Cappuccino</span>
+                <span>45 kr</span>
+            </div>
+            <div class="menu-item">
+                <span>Latte</span>
+                <span>48 kr</span>
+            </div>
+            <div class="menu-item">
+                <span>Te (flera sorter)</span>
+                <span>32 kr</span>
+            </div>
+        </div>
+
+        <h3 style="margin-top:30px;">Bakverk</h3>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <span>Kanelbulle</span>
+                <span>30 kr</span>
+            </div>
+            <div class="menu-item">
+                <span>Chokladboll</span>
+                <span>25 kr</span>
+            </div>
+            <div class="menu-item">
+                <span>Morotskaka</span>
+                <span>42 kr</span>
+            </div>
+            <div class="menu-item">
+                <span>Dagens veganska kaka</span>
+                <span>45 kr</span>
+            </div>
+        </div>
+
+        <h3 style="margin-top:30px;">Lätta rätter</h3>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <span>Soppa med bröd</span>
+                <span>95 kr</span>
+            </div>
+            <div class="menu-item">
+                <span>Sallad</span>
+                <span>110 kr</span>
+            </div>
+            <div class="menu-item">
+                <span>Grillad macka</span>
+                <span>98 kr</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="oppettider">
+        <h2>Öppettider & plats</h2>
+        <div class="two-column">
+            <div class="hours-table">
+                <h3>Öppettider</h3>
+                <p><span>Måndag–fredag</span><span>08:00–18:00</span></p>
+                <p><span>Lördag</span><span>09:00–17:00</span></p>
+                <p><span>Söndag</span><span>Stängt</span></p>
+                <p style="margin-top:10px; font-size:0.9rem;">
+                    Obs: Tiderna är bara exempel, ändra efter dina riktiga.
+                </p>
+            </div>
+            <div>
+                <h3>Hitta hit</h3>
+                <p>Solgatan 12</p>
+                <p>123 45 Solstad</p>
+                <p>Sverige</p>
+                <p style="margin-top:10px;">
+                    Här kan du lägga in en karta (t.ex. Google Maps‑inbäddning) om du vill.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="kontakt">
+        <h2>Kontakt</h2>
+        <div class="two-column">
+            <div>
+                <p><strong>Telefon:</strong> 012‑345 67 89</p>
+                <p><strong>E‑post:</strong> info@solcafeet.se</p>
+                <p><strong>Instagram:</strong> @solcafeet</p>
+                <p style="margin-top:10px;">
+                    Hör gärna av dig om du vill boka bord, beställa catering eller har frågor.
+                </p>
+            </div>
+            <div>
+                <h3>Skicka ett meddelande</h3>
+                <form>
+                    <p>
+                        <label for="name">Namn</label><br />
+                        <input id="name" type="text" style="width:100%; padding:8px; margin-top:4px;" />
+                    </p>
+                    <p>
+                        <label for="email">E‑post</label><br />
+                        <input id="email" type="email" style="width:100%; padding:8px; margin-top:4px;" />
+                    </p>
+                    <p>
+                        <label for="message">Meddelande</label><br />
+                        <textarea id="message" rows="4" style="width:100%; padding:8px; margin-top:4px;"></textarea>
+                    </p>
+                    <p>
+                        <button type="submit" style="padding:8px 20px; border:none; background:#f4d27a; cursor:pointer; border-radius:4px;">
+                            Skicka
+                        </button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © <span id="year"></span> Solcaféet – Alla rättigheter förbehållna.
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
